@@ -1,0 +1,62 @@
+<html>	
+<head>
+<title> Zahlen raten </title>
+</head>
+
+<body>
+	
+<script>
+
+	var a, gedachteZahl, grenze, runden;
+
+	grenze = parseInt(prompt("Bis zu welcher Zahl sollen wir spielen?", " "));
+	
+	runden = parseInt(prompt("Wie viele Versuche sollen wir dir geben, um mich zu schlagen?", " "));
+	
+	gedachteZahl = Math.round(Math.random()*grenze);
+	alert(unescape("Zur %DCberpr%FCfung: " + gedachteZahl));
+
+	for(var i = 0; i< runden;i++)
+	{
+
+	a = parseInt(prompt("Gib nun deine Zahl ein!", " "));
+	
+	if (gedachteZahl > a)
+	{
+		alert("Deine Zahl ist zu klein!");
+	}
+	
+	if(gedachteZahl < a)
+	{
+		alert(unescape("Deine Zahl ist zu gro%DF!"));
+	}
+	
+	if(gedachteZahl==a)
+	{
+		var versuche = i+1;
+		
+		if(versuche==1)
+		{
+			alert("Richtig! Du hast einen Versuch gebraucht.");
+			break;
+		}
+		
+		else
+		{
+			alert("Richtig! Du hast " +versuche+ " Versuche gebraucht.");
+			break;
+		}
+		
+	}
+	
+	if(i==runden-1)
+	{
+		alert("Pech gehabt! Du hast verloren!");
+		break;
+	}
+	
+	}
+
+</script>
+</body>
+</html>
